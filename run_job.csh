@@ -30,7 +30,7 @@ echo "Copying files..."
 cp ${outdir}/input.hepmc .
 
 #compactFile
-cp ${eic_top}/epic/epic_brycecanyon.xml .
+cp ${eic_top}/epic/epic_craterlake.xml .
 
 #magnetic field
 cp -r ${eic_top}/epic/fieldmaps .

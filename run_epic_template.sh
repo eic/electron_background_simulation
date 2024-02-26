@@ -7,7 +7,7 @@ export DETECTOR_PATH=__EIC_TOP__/epic/install/share/epic
 #simulation command
 npsim \
   --inputFiles input.hepmc \
-  --compactFile epic_brycecanyon.xml \
+  --compactFile epic_craterlake.xml \
   --random.seed 123 \
   --physics.list FTFP_BERT \
   --field.eps_min 5e-06 \

@@ -9,7 +9,7 @@ from hepmc_selector import hepmc_selector
 def main():
 
     #production output directory
-    outdir = "/eic/u/ceska/gpfs/eic/simulation/output"
+    outdir = "/eic/u/ceska/electron_background_simulation/output"
     os.system("mkdir -p "+outdir)
 
     #number of jobs
