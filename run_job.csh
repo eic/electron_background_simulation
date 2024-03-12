@@ -37,7 +37,13 @@ cp -r ${eic_top}/epic/fieldmaps .
 
 #calibrations
 cp -r ${eic_top}/epic/calibrations .
+
+#EICrecon script
+cp /eic/u/ceska/gpfs/electron_background_simulation/EICrecon.sh .
 echo "Files copied!"
+echo "--- Recon macro ---"
+cat EICrecon.sh
+echo "----------------------"
 echo
 
 echo "--- Local directory ---"
@@ -47,15 +53,18 @@ echo "-----------------------"
 
 #run the EPIC
 echo "Running EPIC in eic-shell"
-echo "echo begin" | ${eic_shell}/eic-shell | cat >> run.log
-cat run_epic.sh | ${eic_shell}/eic-shell | cat >> run.log
-echo "echo done" | ${eic_shell}/eic-shell | cat >> run.log
+echo "echo begin" | ${eic_shell}/eic-shell > run.log
+cat run_epic.sh | ${eic_shell}/eic-shell >> run.log
+echo "echo done" | ${eic_shell}/eic-shell >> run.log
+cat EICrecon.sh | ${eic_shell}/eic-shell >> run.log
 
 #attach the log
 cat run.log
 
+ls -alh
+
 #put output to the output directory
 mv output.edm4hep.root ${outdir}"/output.edm4hep.root"
+mv podio_output.root ${outdir}"/podio_output.root" 
 
 echo "All done"
-

@@ -14,4 +14,3 @@ npsim \
   --field.eps_max 1e-04 \
   --numberOfEvents __NEV__ \
   --outputFile output.edm4hep.root
-
